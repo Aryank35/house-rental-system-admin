@@ -11,7 +11,11 @@ const TenantDetails = () => {
       rentAmount: 1000,
       securityDeposit: 500,
       numberOfMembers: 2,
-      dateOfAdmission: '2022-01-01'
+      dateOfAdmission: '2022-01-01',
+      billMonth: 'September 2024',
+      totalBill: 1000,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Paid'
     },
     {
       id: 2,
@@ -22,7 +26,11 @@ const TenantDetails = () => {
       rentAmount: 1200,
       securityDeposit: 600,
       numberOfMembers: 3,
-      dateOfAdmission: '2022-02-01'
+      dateOfAdmission: '2022-02-01',
+      billMonth: 'September 2024',
+      totalBill: 1200,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Pending'
     },
     {
       id: 3,
@@ -33,7 +41,11 @@ const TenantDetails = () => {
       rentAmount: 1500,
       securityDeposit: 750,
       numberOfMembers: 4,
-      dateOfAdmission: '2022-03-01'
+      dateOfAdmission: '2022-03-01',
+      billMonth: 'September 2024',
+      totalBill: 1500,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Paid'
     },
     {
       id: 4,
@@ -44,7 +56,11 @@ const TenantDetails = () => {
       rentAmount: 1800,
       securityDeposit: 900,
       numberOfMembers: 5,
-      dateOfAdmission: '2022-04-01'
+      dateOfAdmission: '2022-04-01',
+      billMonth: 'September 2024',
+      totalBill: 1800,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Pending'
     },
     {
       id: 5,
@@ -55,9 +71,14 @@ const TenantDetails = () => {
       rentAmount: 2000,
       securityDeposit: 1000,
       numberOfMembers: 6,
-      dateOfAdmission: '2022-05-01'
+      dateOfAdmission: '2022-05-01',
+      billMonth: 'September 2024',
+      totalBill: 2000,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Paid'
     }
   ]);
+  
 
   const [isEditing, setIsEditing] = useState(false);
   const [currentTenant, setCurrentTenant] = useState(null);

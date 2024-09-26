@@ -6,9 +6,14 @@ const TenantDetails = () => {
       id: 1,
       roomNumber: '101',
       name: 'Rahul Kumar',
+      phoneNumber: '1234567890',
+      address: '123 Main St',
+      rentAmount: 1000,
+      securityDeposit: 500,
+      numberOfMembers: 2,
+      dateOfAdmission: '2022-01-01',
       billMonth: 'September 2024',
       totalBill: 1000,
-      phoneNumber: '1234567890',
       dueDate: '2024-09-30',
       paymentStatus: 'Paid'
     },
@@ -16,14 +21,64 @@ const TenantDetails = () => {
       id: 2,
       roomNumber: '102',
       name: 'Priya Singh',
+      phoneNumber: '9876543210',
+      address: '456 Elm St',
+      rentAmount: 1200,
+      securityDeposit: 600,
+      numberOfMembers: 3,
+      dateOfAdmission: '2022-02-01',
       billMonth: 'September 2024',
       totalBill: 1200,
-      phoneNumber: '9876543210',
       dueDate: '2024-09-30',
       paymentStatus: 'Pending'
     },
-    // Add more tenant objects as needed
+    {
+      id: 3,
+      roomNumber: '103',
+      name: 'Rohan Patel',
+      phoneNumber: '5551234567',
+      address: '789 Oak St',
+      rentAmount: 1500,
+      securityDeposit: 750,
+      numberOfMembers: 4,
+      dateOfAdmission: '2022-03-01',
+      billMonth: 'September 2024',
+      totalBill: 1500,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Paid'
+    },
+    {
+      id: 4,
+      roomNumber: '104',
+      name: 'Aisha Khan',
+      phoneNumber: '9012345678',
+      address: '321 Maple St',
+      rentAmount: 1800,
+      securityDeposit: 900,
+      numberOfMembers: 5,
+      dateOfAdmission: '2022-04-01',
+      billMonth: 'September 2024',
+      totalBill: 1800,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Pending'
+    },
+    {
+      id: 5,
+      roomNumber: '105',
+      name: 'Suresh Jain',
+      phoneNumber: '1112223333',
+      address: '456 Pine St',
+      rentAmount: 2000,
+      securityDeposit: 1000,
+      numberOfMembers: 6,
+      dateOfAdmission: '2022-05-01',
+      billMonth: 'September 2024',
+      totalBill: 2000,
+      dueDate: '2024-09-30',
+      paymentStatus: 'Paid'
+    }
   ]);
+  
 
   const [editMode, setEditMode] = useState(false);
   const [selectedTenant, setSelectedTenant] = useState(null);
@@ -59,8 +114,8 @@ const TenantDetails = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
-      <h1 className="text-3xl font-bold mb-4 text-center">Tenant Billing Details</h1>
+    <div className="max-w-7xl mx-auto py-4 sm:p-6 md:p-8">
+      <h1 className="text-3xl font-bold mb-4 text-center">Tenant Electricity Billing Details</h1>
       <table className="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
         <thead className="bg-gray-800 text-white">
           <tr>
