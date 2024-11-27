@@ -4,65 +4,27 @@ import { faMoneyCheckDollar, faInbox } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  return (
-    <div>
-      <div className="flex flex-wrap justify-between mx-2 h-[40vh] items-center">
-        <Link
-          to="/rentPaymentList"
-          className="shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 bg-blue-500 text-white font-bold px-3 py-6 text-sm h-[100px] mt-[30px] rounded-md w-[45%] md:w-[23%] md:h-[120px] md:text-lg text-center "
-        >
-          <div className=" text-center flex flex-col justify-center items-center">
-            <span>
-              <FontAwesomeIcon icon={faMoneyCheckDollar} className="text-2xl" />
-            </span>
-            <span> Payment Stats</span>
-          </div>
-        </Link>
-        <Link
-          to="/complaints"
-          className="shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 bg-blue-500 text-white font-bold px-5 py-6 text-sm h-[100px] mt-[30px] rounded-md w-[45%] md:w-[23%] md:h-[120px] md:text-lg text-center "
-        >
-          <div className=" text-center flex flex-col justify-center items-center">
-            <span>
-              <FontAwesomeIcon icon={faInbox} className="text-2xl" />
-            </span>
-            <span> Complaints</span>
-          </div>
-        </Link>
+  const links = [
+    { to: "/rentPaymentList", label: "Payment Stats", icon: faMoneyCheckDollar },
+    { to: "/complaints", label: "Complaints", icon: faInbox },
+    { to: "/noticeBoard", label: "Notice Board", icon: faInbox },
+    { to: "/electricityBill", label: "Electricity Bill", icon: faInbox },
+    { to: "/tenantsDetails", label: "Tenants Details", icon: faInbox },
+  ];
 
-        <Link
-          to="/noticeBoard"
-          className="shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 bg-blue-500 text-white font-bold px-3 py-6 text-sm h-[100px] mt-[30px] rounded-md w-[45%] md:w-[23%] md:h-[120px] md:text-lg text-center "
-        >
-          <div className=" text-center flex flex-col justify-center items-center">
-            <span>
-              <FontAwesomeIcon icon={faInbox} className="text-2xl" />
-            </span>
-            <span> Notices Board</span>
-          </div>
-        </Link>
-        <Link
-          to="/electricityBill"
-          className="shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 bg-blue-500 text-white font-bold px-3 py-6 text-sm h-[100px] mt-[30px] rounded-md w-[45%] md:w-[23%] md:h-[120px] md:text-lg text-center "
-        >
-          <div className=" text-center flex flex-col justify-center items-center">
-            <span>
-              <FontAwesomeIcon icon={faInbox} className="text-2xl" />
-            </span>
-            <span> Electricity Bill</span>
-          </div>
-        </Link>
-        <Link
-          to="/tenantsDetails"
-          className="shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 bg-blue-500 text-white font-bold px-3 py-6 text-sm h-[100px] mt-[30px] rounded-md w-[45%] md:w-[23%] md:h-[120px] md:text-lg text-center "
-        >
-          <div className=" text-center flex flex-col justify-center items-center">
-            <span>
-              <FontAwesomeIcon icon={faInbox} className="text-2xl" />
-            </span>
-            <span> Tenants Details</span>
-          </div>
-        </Link>
+  return (
+    <div className="min-h-screen bg-gradient-to-r from-gray-100 to-blue-50 py-8 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-6xl">
+        {links.map((link, index) => (
+          <Link
+            key={index}
+            to={link.to}
+            className="transition-transform transform hover:scale-105 shadow-lg rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 flex flex-col items-center justify-center space-y-4 hover:shadow-xl"
+          >
+            <FontAwesomeIcon icon={link.icon} className="text-4xl" />
+            <span className="text-lg font-semibold">{link.label}</span>
+          </Link>
+        ))}
       </div>
     </div>
   );
